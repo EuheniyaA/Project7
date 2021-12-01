@@ -203,8 +203,7 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
-
-    @Test
+       @Test
     public void myTestCurrVolMaxVolume10() {
         Radio rad = new Radio();
         rad.setCurrentVolume(10);
@@ -295,6 +294,96 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void myTestCurrVolMinVolume0() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(0);
+
+        rad.decreaseVolume();
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolume1() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(1);
+
+        rad.decreaseVolume();
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolumeLess0() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(-1);
+
+        rad.decreaseVolume();
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolume10() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(10);
+
+        rad.decreaseVolume();
+
+        int expected = 9;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolume9() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(9);
+
+        rad.decreaseVolume();
+
+        int expected = 8;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolumeMore10() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(11);
+
+        rad.decreaseVolume();
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void myTestCurrVolMinVolume5() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(5);
+
+        rad.decreaseVolume();
+
+        int expected = 4;
+        int actual = rad.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
 
 }
 
