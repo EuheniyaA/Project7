@@ -28,7 +28,6 @@ public class RadioTest {
     }
 
 
-
     @Test
     public void myTestCurrRad0PrevStation5() {
         Radio rad = new Radio();
@@ -94,7 +93,7 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
-       @Test
+    @Test
     public void myTestCurrVolMaxVolume10() {
         Radio rad = new Radio();
         rad.setCurrentVolume(10);
@@ -143,6 +142,7 @@ public class RadioTest {
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
     }
+
     @Test
     public void myTestCurrVolMinVolumeLessMin() {
         Radio rad = new Radio();
